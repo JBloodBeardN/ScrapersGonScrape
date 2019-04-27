@@ -17,22 +17,30 @@
             <button type="button" class="btn btn-outline-primary">Scrape The News</button>
         </li>
     </ul>
-
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Scrapers Gon Scrape</h1>
+            <p class="lead">Select Scrape to get new Articles, or a tab to get articles filtered by type.</p>
+        </div>
+    </div>
     <div class="tab-content">
         <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            {{#each usArticle}}
-            <div 
-            data-id={{usArticle._id}} 
-            class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{usArticle.title}}</h5>
-                    <p class="card-text">{{usArticle.body}}</p>
-                    <a href="article/{{usArticle._id}}" class="btn btn-primary">View Notes</a>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        {{#each usArticles}}
+                        <div data-id={{_id}} class="card" style="width: 50rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{title}}</h5>
+                                <p class="card-text">{{link}}</p>
+                                <a href="article/{{_id}}" class="btn btn-primary">View Notes</a>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
                 </div>
             </div>
-            {{/each}}
-            <p> this is in the home page tab</p>
+
         </div>
         <div class="tab-pane" id="world" role="tabpanel" aria-labelledby="world-tab">
             <h1>World Tab</h1>
