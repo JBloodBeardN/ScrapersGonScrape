@@ -45,6 +45,11 @@ router.get("/scrape", function (req, res) {
                 .attr("href");
 
             // Create a new Article using the `result` object built from scraping
+            db.Article.collection.drop(function(err){
+                if(err){
+                    console.log(err);
+                }
+            })
             db.Article.create(result)
                 .then(function (dbArticle) {
                     // View the added result in the console
