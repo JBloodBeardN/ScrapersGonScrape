@@ -1,0 +1,5 @@
+<h2>{{title}}</h2>
+<label for="titleinput">Note title</label>
+<input id='titleinput' name='title' value="{{#if note.title}}{{note.title}}{{/if}}"></input>
+<textarea id='bodyinput' name='body'>{{#if note.title}}{{note.body}}{{/if}}</textarea>
+<button data-id={{_id}} id='savenote'>Save Note</button>
