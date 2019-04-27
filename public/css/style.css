@@ -1,0 +1,12 @@
+.jumbotron{
+    background-color: skyblue;
+    background-image: url("../images/pawel-czerwinski-705954-unsplash.jpg");
+    background-size: cover
+}
+
+body{
+    
+ background-color: skyblue;
+    background-image: url("../images/bernard-hermant-590572-unsplash.jpg");
+    background-size: contain
+}

@@ -5,8 +5,23 @@ var router = express.Router();
 
 var axios = require("axios");
 var cheerio = require("cheerio");
+
+//homepage get route
 router.get("/", function(req, res){
-    res.render("scraper")
+    db.Article.find({})
+        .then(function (dbArticles) {
+            // If we were able to successfully find Articles, send them back to the client
+            const hbsObject = {
+                usArticles: dbArticles
+            }
+            console.log(hbsObject);
+            res.render("scraper", hbsObject);
+        })
+        .catch(function (err) {
+            // If an error occurred, send it to the client
+            res.json(err);
+        });
+    
 })
 // A GET route for scraping the echoJS website
 router.get("/scrape", function (req, res) {
