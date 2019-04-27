@@ -25,6 +25,7 @@ router.get("/", function(req, res){
 })
 // A GET route for scraping the echoJS website
 router.get("/scrape", function (req, res) {
+    console.log('scraped was hit');
     // First, we grab the body of the html with axios
     axios.get("http://www.echojs.com/").then(function (response) {
         // Then, we load that into cheerio and save it to $ for a shorthand selector

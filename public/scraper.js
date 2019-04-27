@@ -1,10 +1,25 @@
 //desktop targets
-    //scrape button
+//scrape button
+$(document).ready(function () {
 
-    //add comment button
 
-//modal targets
-    //delete comment button
+    $("#scrape").on("click", function () {
 
-    //add comment button(form submit)
-    //e.preventdefault()
+        $.ajax({
+            method: "GET",
+            url: "/scrape"
+        })
+            // With that done, add the note information to the page
+            .then(function (data) {
+                window.location.replace("/");
+            });
+
+        //add comment button
+
+        //modal targets
+        //delete comment button
+
+        //add comment button(form submit)
+        //e.preventdefault() 
+    });
+});
